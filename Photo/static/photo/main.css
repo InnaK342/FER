@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: regularFont;
+}
+
+@font-face {
+    font-family: regularFont;
+    src: url(FontsFree-Net-SFMono-Regular.ttf);
+}
+
+.header-logo p{
+    font-size:20px;
+    padding-left: 30px;
+    margin-bottom: 0;
+}
+
+.header-logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo a{
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+
+.header-logo a:hover{
+    text-decoration: none;
+    color: black;
+    transform: scale(1.1);
+}
+
+.container-header{
+    padding: 0 3% 0 3%;
+    box-shadow:  0px 0px 16px rgba(38, 38, 38, 0.16);
+
+}
+
+.main{
+    padding: 0 3% 0 3%;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 20px 0;
+}
+
+.login a, .button a, button, .button-photo-form, .results a{
+    color: #1D1D1D;
+    outline: none;
+    text-decoration: none;
+    padding: 14px 20px 14px 20px;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+}
+
+button{
+    background-color:#fff;
+    font-size: 15px;
+}
+
+.login a:hover, .button a:hover, button:hover, .form-control:hover, .results a:hover, .nav-link.delete:hover{
+      background-color:#000;
+      color: #fff;
+      transition: 0.7s;
+  }
+
+.title p{
+    font-size: 15px;
+    line-height: 170%;
+    padding: 20px 50px 32px 50px;
+    text-align: justify;
+}
+
+
+.button{
+    text-align: center;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.form-element {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    margin-top: 10px;
+    display: block;
+    width:200px;
+    padding:15px;
+    border-radius:5px;
+    border: 1px solid #ccc;
+    box-shadow:2px 2px 5px rgba(0,0,0,0.06);
+}
+
+
+.small{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+.small a{
+    color: black;
+}
+
+.form-error{
+    color: red;
+    margin-top: 2px;
+    font-size: 14px;
+    padding: 0;
+}
+
+.form-error ul {
+  list-style-type: none;
+}
+
+.form-control{
+    margin-top: 20px;
+
+}
+
+.photo_before{
+    margin-top: 25px;
+}
+
+.results{
+    margin-top: 40px;
+}
+
+.results_photo{
+    margin-top: 38px;
+}
+
+.results p{
+    margin-bottom: 48px;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.results-text{
+    margin-top: 38px;
+}
+
+.photo_person_page img{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav-link.delete{
+    color: black;
+}
+
+
+

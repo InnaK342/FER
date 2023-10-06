@@ -1,0 +1,1 @@
+[{"Angry": 0.64, "Disgust": 0.04, "Fear": 37.49, "Happy": 0.01, "Sad": 6.08, "Surprise": 54.08, "Neutral": 1.66}]

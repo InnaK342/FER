@@ -1,0 +1,16 @@
+{% extends 'Photo/base.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {% for f in form %}
+    <div class="form-element">
+        <label for="{{ f.id_for_label }}" class="form-label">{{ f.label }} {{ f }}</label>
+    </div>
+    {% endfor %}
+    <button type="submit">Зареєструватись</button>
+    {% for f in form %}
+        <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+</form>
+<p class="small">Уже маєте акаунт? <a href="{% url 'login' %}">Увійти</a></p>
+{% endblock content %}

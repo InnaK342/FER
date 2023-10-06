@@ -1,0 +1,53 @@
+{% extends 'Photo/base.html' %}
+
+{% block links %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-5 offset-1">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for f in form %}
+                <div class="form-element">
+                    <label for="{{ f.id_for_label }}" class="form-label">{{ f }}</label>
+                </div>
+                {% endfor %}
+                <button type="submit" class="button-photo-form">Виконати</button>
+                {% for f in form %}
+                <div class="form-error">{{ f.errors }}</div>
+                {% endfor %}
+            </form>
+            <div class="photo_before">
+            {% if photo.photo %}
+                <img class="img-article-left thumb" width=100% src="{{ photo.photo.url }}" alt="">
+            {% endif %}
+            </div>
+        </div>
+        <div class="col-5 offset-1">
+            <div class="results">
+            {% if photo.file_results %}
+                 <p>Результат прогнозування: </p>
+                <a href="{{ photo.file_results.url }}" download="result.txt">Завантажити результати</a>
+            {% endif %}
+            </div>
+            {% if photo is not None %}
+            <div class="results_photo">
+                <img class="img-article-left thumb" width=100% src="{{ photo.result_photo.url }}" alt="">
+            </div>
+
+            <div class="results-text">
+            {% for result in results %}
+            <p>Результати для обличчя {{ forloop.counter }}:</p>
+            {% for emotion, perc in result.items %}
+            <p>{{ emotion }}: {{ perc|floatformat }}</p>
+            {% endfor %}
+            {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
